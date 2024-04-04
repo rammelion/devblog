@@ -1,0 +1,52 @@
+.nav-vertical{
+    display: block;
+    float: right;
+}
+
+.nav-vertical ul{
+    line-height: 0;
+}
+
+.nav-vertical h3{
+    color: #de7e5d;
+}
+
+.nav-vertical h3, .nav-vertical div.search{
+    float: right;
+}
+
+#pages-menu li, #posts-menu li{
+    display:block;
+}
+
+#pages-menu a, #posts-menu a{
+    line-height: 0;
+}
+
+#pages-menu h4, #posts-menu h4{
+
+    line-height: 1.38rem;
+    color: #de7e5d;
+    font-weight: 300;
+}
+
+#pages-menu h4:hover, #posts-menu h4:hover{
+    color: #ce3535;
+    
+}
+
+#pages-menu{
+    text-align: right;
+}
+
+#posts-menu{
+    margin-top: 3rem;
+    text-align: left;
+}
+
+@media screen and (min-width:786) {
+    .nav-horizontal > div.search{
+        display:none;
+    }
+    
+}

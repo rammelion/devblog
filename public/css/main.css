@@ -1,0 +1,116 @@
+html{
+    font-size: clamp(12px, 1.5vw, 20px);
+    line-height: 1.5rem;
+    min-width: 408px;
+}
+
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    color: #a8a8aa;
+    background-color: #0c1326;
+}
+
+h1, h2, h3, h4{
+    color:#e2a088;
+    font-weight: 500;
+}
+
+
+h1{
+    font-size: 2.61rem;
+    margin-bottom: 2.61rem;
+}
+
+h2{
+    font-size: clamp(1.2 rem, 1vh + 1.2rem, 2.23rem);
+    margin-bottom: 2.23rem;
+}
+
+h3{
+    font-size: clamp(1rem, 1vh + 1.1rem, 1.38rem);
+    margin-bottom: 1.38rem;
+}
+
+h4{
+    font-size: 1rem;
+    margin-bottom: 0.81rem;
+}
+
+a{
+    text-decoration: none;
+    color:#e2a088;
+}
+
+a:hover{
+    color:#ff4300;
+}
+
+a:active{
+    color:#ff4300;
+}
+
+a:selected{
+    color: #ff4300;
+}
+
+main{
+    display: flex;
+}
+
+main #left-container{
+    flex-basis: 25%;
+    margin-left: 20px;
+}
+
+main #right-container{
+    min-width: 584.px;
+    flex-basis: 75%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.footer-wrapper{
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+
+}
+
+footer{
+    border-top: 1px solid #292b63;
+    padding: 0.61rem 4.22rem 0.61rem 4.22rem;
+}
+
+footer > h4{
+    font-weight: 300;
+}
+
+p{
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (max-width: 767px) {
+    
+    #left-container{
+        display: none;
+    }
+    
+    #right-container{
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (min-width: 584px) {
+
+}
+
+@media screen and (max-width: 584px) {
+    #left-container{
+        display: none;
+    }
+}
