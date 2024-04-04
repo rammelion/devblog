@@ -22,5 +22,5 @@
         referrerpolicy="no-referrer"
     />
     <x-layout.styles />
-    <title>Rammelion Blog</title>
+    <title>Rammelion DevBlog</title>
 </head>
