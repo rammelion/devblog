@@ -5,7 +5,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href=assets('images/favicons/apple-touch-icon.png')>
     <link rel="icon" type="image/png" sizes="32x32" href=assets('images/favicon-32x32.png')>
     <link rel="icon" href='images/favicons/favicon.ico'>
-    <link rel="manifest" href=assets('images/favicons/site.webmanifest')>
+    <!-- <link rel="manifest" href=assets('images/favicons/site.webmanifest')> -->
     <link
         rel='stylesheet'
         href='https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap'
