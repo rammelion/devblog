@@ -129,6 +129,8 @@ return [
     |--------------------------------------------------------------------------
     */
 
+    'theme' => 'light',
+
     'themes' => [
         'light' => 'css/theme-light.css',
         'dark' => 'css/theme-dark.css',
