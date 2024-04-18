@@ -7,12 +7,13 @@ html{
 body{
     font-family: 'Noto Sans', sans-serif;
     font-weight: 300;
-    color: #a8a8aa;
-    background-color: #0c1326;
+    font-size: clamp(0.8rem, 1vh + 0.8rem,1.1rem);
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
 }
 
 h1, h2, h3, h4{
-    color:#e2a088;
+    color: var(--main-hx-color);
     font-weight: 500;
 }
 
@@ -39,11 +40,11 @@ h4{
 
 a{
     text-decoration: none;
-    color:#e2a088;
+    color: var(--main-a-color);
 }
 
 a:hover{
-    color:#ff4300;
+    color:var(--main-ah-color);
 }
 
 a:active{
@@ -78,8 +79,8 @@ main #right-container{
 }
 
 footer{
-    border-top: 1px solid #292b63;
-    padding: 0.61rem 4.22rem 0.61rem 4.22rem;
+    border-top: 1px solid var(--main-hx-color);
+    padding: 0.61rem 2.23rem 0.1rem 2.23rem;
 }
 
 footer > h4{
@@ -95,11 +96,11 @@ p{
 }
 
 @media screen and (max-width: 767px) {
-    
+
     #left-container{
         display: none;
     }
-    
+
     #right-container{
         flex-basis: 100%;
     }

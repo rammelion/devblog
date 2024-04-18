@@ -6,21 +6,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href=assets('images/favicon-32x32.png')>
     <link rel="icon" href='images/favicons/favicon.ico'>
     <!-- <link rel="manifest" href=assets('images/favicons/site.webmanifest')> -->
-    <link
-        rel='stylesheet'
-        href='https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap'
-    />
-    <link
-        rel='stylesheet'
-        href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'
-    />
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
-    <x-layout.styles />
+    <x-layout.styles :theme="$theme" />
     <title>Rammelion DevBlog</title>
 </head>

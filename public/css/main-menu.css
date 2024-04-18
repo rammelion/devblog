@@ -8,7 +8,7 @@
 }
 
 .nav-vertical h3{
-    color: #de7e5d;
+    color: var(--main-hx-color);
 }
 
 .nav-vertical h3, .nav-vertical div.search{
@@ -26,13 +26,13 @@
 #pages-menu h4, #posts-menu h4{
 
     line-height: 1.38rem;
-    color: #de7e5d;
+    color: var(--main-hx-color);
     font-weight: 300;
 }
 
 #pages-menu h4:hover, #posts-menu h4:hover{
-    color: #ce3535;
-    
+    /*color: #ce3535;*/
+
 }
 
 #pages-menu{
@@ -48,5 +48,5 @@
     .nav-horizontal > div.search{
         display:none;
     }
-    
+
 }

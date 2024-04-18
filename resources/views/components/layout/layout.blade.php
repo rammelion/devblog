@@ -1,8 +1,23 @@
-<x-layout.head />
+<?php
+    if(isset($_COOKIE['theme'])){
+        $theme = $_COOKIE['theme'];
+    } else $theme = config('app.theme');
+?>
+
+
+<x-cookies.container />
+<x-layout.head :theme="$theme"/>
 <body>
     <x-layout.header />
     <main>
-        {{$slot}}
+        <x-layout.left />
+        <x-layout.right>
+            {{$slot}}
+        </x-layout.right>
     </main>
     <x-layout.footer />
+    <x-laravel-cookies-consent></x-laravel-cookies-consent>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
 </body>
+

@@ -3,7 +3,7 @@
 }
 
 .search * {
-    display: inline-block;   
+    display: inline-block;
 }
 
 .search form{
@@ -16,10 +16,10 @@
     padding: 5px;
     -webkit-border-radius: 0.5rem;
     -moz-border-radius: 0.5rem;
-     border-radius: 0.5rem;
-     border: 1px solid #e7a38b;
-     background-color: #0c1326;;
-     color: #e7a38b;
+    border-radius: 0.5rem;
+    border: 1px solid  var(--main-btn-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
 }
 
 button.search{
@@ -27,8 +27,8 @@ button.search{
     width: 1rem;
     border: none;
     font-size: 1.2rem;
-    color: #e7a38b;
-    background-color: #0c1326;
+    color: var(--main-btn-color);
+    background-color: var(--main-bg-color);
 }
 
 nav.nav-top{

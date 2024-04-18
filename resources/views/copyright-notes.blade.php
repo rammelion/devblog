@@ -1,0 +1,2 @@
+Laravel Cookies Consent Plugin © under <a hef="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License</a> 2018-{{now()->year}} by SciFY
+persist_configuration_laravel.php © takifouhal

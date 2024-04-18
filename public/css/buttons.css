@@ -1,0 +1,19 @@
+.button-dark{
+    border-radius: 0.5rem;
+    border: 1px solid #e7a38b;
+    background-color: #0c1326;
+    color: #e7a38b;
+}
+
+.button-light{
+    border-radius: 0.5rem;
+    border: 1px solid #0c1326;
+    background-color: #e7a38b;
+    color: #0c1326;
+}
+
+.btn-check {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+}

@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'Home' => '/',
+    'Contatct Us' => 'contatct-us',
+    'Cookie Policy' => 'cookie-policy',
+    'Privacy-Policy'=> 'privacy-policy',
+]
