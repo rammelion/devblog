@@ -11,10 +11,14 @@
 
     <!-- Create one update function for each consent parameter -->
     <script>
-        function consentGrantedAnalyticsStorage() {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted'
-            });
-        }
+    function allConsentGranted() {
+    gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+    });
+    }
     </script>
+    allConsentGranted()
 @endif
