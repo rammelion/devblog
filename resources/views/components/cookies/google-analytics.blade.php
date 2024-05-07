@@ -1,12 +1,12 @@
-<!-- Google tag (gtag.js) -->
 @if(('app.google_tag_set')!==null)
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{config('app.google_tag_id')}}"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJWG2DJF55"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-
         gtag('js', new Date());
-        gtag('config', '{{config('app.google_tag_id')}}');
+
+        gtag('config', 'G-PJWG2DJF55');
     </script>
 
     <!-- Create one update function for each consent parameter -->

@@ -1,6 +1,5 @@
 <script>
     // Define dataLayer and the gtag function.
-    @
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
 
@@ -14,12 +13,12 @@
     });
 </script>
 
-<?php
+@php
     $functionalityCookie = config('cookies_consent.cookie_prefix')  . 'cookies_consent_functionality';
     $performanceCookie = config('cookies_consent.cookie_prefix')  . 'cookies_consent_performance';
     $statisticalCookie = config('cookies_consent.cookie_prefix')  . 'cookies_consent_statistical';
     $targetingCookie = config('cookies_consent.cookie_prefix')  . 'cookies_consent_targeting';
-?>
+@endphp
 
 @if(
     isset($_COOKIE[$functionalityCookie])

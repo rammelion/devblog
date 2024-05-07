@@ -1,11 +1,9 @@
-s<?php
+@php
     if(isset($_COOKIE['theme'])){
         $theme = $_COOKIE['theme'];
     } else $theme = config('app.theme');
-?>
+@endphp
 
-
-<x-cookies.container />
 <x-layout.head :theme="$theme"/>
 <body>
     <x-layout.header />
@@ -16,12 +14,14 @@ s<?php
         </x-layout.right>
     </main>
     <x-layout.footer />
+    <x-cookies.container />
     <x-laravel-cookies-consent></x-laravel-cookies-consent>
-    <script>
+    <!--   <script>
         if (screen && screen.width > 480) {
         document.write('<script src="{{asset('ckeditor/ckeditor.js') }}></script>')>
     }
     </script>
+    -->
 
     </body>
 
