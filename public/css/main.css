@@ -59,19 +59,7 @@ main{
     display: flex;
 }
 
-main #left-container{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 25%;
-    margin-left: 20px;
-}
 
-main #right-container{
-    min-width: 584.px;
-    flex-basis: 75%;
-    margin-left: 20px;
-    margin-right: 20px;
-}
 
 .footer-wrapper{
     display: flex;
@@ -90,7 +78,7 @@ footer > h4{
 }
 
 p{
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem !important;
 }
 
 @media screen and (min-width: 768px) {

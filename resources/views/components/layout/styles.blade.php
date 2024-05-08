@@ -78,6 +78,8 @@
     @break
 
     @default
+        <link id="theme" rel="stylesheet" href='css/theme-dark.css'>
+    @break
 
 @endswitch
 

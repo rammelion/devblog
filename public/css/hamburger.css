@@ -24,6 +24,11 @@
     margin-left: 0px;
 }
 
+.hamburger{
+  background-color: var(--main-bg-color);
+  color: var(main-hx-color);
+}
+
 .top-nav {
   display: flex;
   flex-direction: row;

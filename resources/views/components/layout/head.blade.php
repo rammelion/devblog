@@ -6,6 +6,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href=assets('images/favicon-32x32.png')>
     <link rel="icon" href='images/favicons/favicon.ico'>
     <!-- <link rel="manifest" href=assets('images/favicons/site.webmanifest')> -->
+    @vite('resources/css/app.css')
     <x-layout.styles :theme="$theme" />
     <title>Rammelion DevBlog</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"
+    ></script>
 </head>

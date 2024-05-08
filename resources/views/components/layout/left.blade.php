@@ -1,11 +1,19 @@
-<div id="left-container">
-    <x-layout.nav-vertical>
-        <x-layout.pages-menu />
-    </x-layout.nav-vertical>
-    <x-layout.nav-vertical>
-        <h3>Recent Posts</h3>
-        <x-layout.search />
-        <x-layout.posts-menu />
-    </x-layout.nav-vertical>
+<x-flex.desktop.column id="left-container" class="md:flex-initial md:justify-start md:basis-1/3 md:ml-7">
 
-</div>
+    <x-flex.desktop.column class="justify-start">
+        <x-layout.nav-vertical>
+            <x-layout.pages-menu />
+        </x-layout.nav-vertical>
+    </x-flex.desktop.column>
+    <x-flex.desktop.column class="justify-start">
+        <h3 class="text-right">Recent Posts</h3>
+        <x-flex.desktop.row class="md:justify-end">
+            <x-layout.search />
+        </x-flex.desktop.row>
+        <x-layout.nav-vertical>
+            <x-layout.posts-menu />
+        </x-layout.nav-vertical>
+    </x-flex.desktop.row>
+
+
+</x-flex.desktop.column>
