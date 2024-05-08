@@ -1,4 +1,4 @@
-<div x-data="{ open: false }" class="hamburger shadow-md">
+<div x-data="{ open: false }" class="hamburger">
       <div class="container mx-auto flex justify-between items-center p-4">
         
         <button @click="open = !open" class="lg:hidden text-blue-500">
@@ -35,14 +35,7 @@
             </svg>
           </div>
         </button>
-        <div class="hidden lg:flex">
-          <ul class="lg:flex space-x-4">
-            <li><a class="text-blue-500" href="#">Home</a></li>
-            <li><a class="text-blue-500" href="#">About</a></li>
-            <li><a class="text-blue-500" href="#">Services</a></li>
-            <li><a class="text-blue-500" href="#">Contact</a></li>
-          </ul>
-        </div>
+
       </div>
       <div
         x-show="open"
@@ -54,11 +47,6 @@
         x-transition:leave-end="translate-y-10 opacity-0"
         class="lg:hidden"
       >
-        <ul class="bg-white p-4">
-          <li><a class="text-blue-500" href="#">Home</a></li>
-          <li><a class="text-blue-500" href="#">About</a></li>
-          <li><a class="text-blue-500" href="#">Services</a></li>
-          <li><a class="text-blue-500" href="#">Contact</a></li>
-        </ul>
+    <x-layout.pages-menu />
       </div>
     </div>
