@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PostsController;
+use App\Models\Posts;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
 
 Route::get("/away", function () {
     return redirect()->away('https://www.bing.com');
@@ -12,8 +13,21 @@ Route::get("/away", function () {
     }
 );*/
 
+// show all post unfiltered
 Route::get('/', [PostsController::class, 'index']);
 
+
+
+//show a single post
+
+Route::get('/{title}', [PostsController::class, 'show']);
+
+/*Route::get('/{title}', function ($title) {
+    return view('index', [
+        'post' => Posts::findByTitle($title),
+        'action' => 'show'
+    ]);
+});*/
 
 // Route::get('/',[ThemeController::class, 'readCookie']);
 

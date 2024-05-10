@@ -18,6 +18,7 @@ class Posts extends Model
         'title',
         'featuredImage',
         'tags',
+        'excerpt',
         'body',
     ];
 
@@ -26,10 +27,21 @@ class Posts extends Model
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    
+    
+    public function find($id) {
+        return $this->where('id', $id)->first();
+    }
+
+    public static function findByTitle($title) {
+        $posts = self::all();
+
+        foreach($posts as $post) {
+            if($post['title'] == $title) {
+                return $post;
+            }
+        }
+    }
 
     public function scopeFilter($query, array $filters) {
         //  tag filter

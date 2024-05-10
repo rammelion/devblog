@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('featuredImage')->default('gallery/laravel-logo.png');
             $table->longText('tags');
+            $table->longText('excerpt')->nullable();
             $table->longText('body');
             $table->timestamps();
         });

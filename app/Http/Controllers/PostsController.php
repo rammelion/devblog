@@ -11,7 +11,8 @@ class PostsController extends Controller
     //Show all post unfiltered
     public function index() {
         return view('index', [
-            'posts' => Posts::all()->sortDesc()
+            'posts' => Posts::all()->sortDesc(),
+            'action' => 'index'
         ]);
     }
     
@@ -25,9 +26,10 @@ class PostsController extends Controller
 
 
     //show single post
-    public function show(post $post) {
+    public function show($title) {
         return view('index', [
-            'post' => $post
+            'post' => Posts::findByTitle($title),
+            'action' => 'show'
         ]);
     }
 }
