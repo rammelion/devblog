@@ -10,30 +10,27 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
  // required function
 
-  function generateParagraph(int $maxWords, int $maxSentences){
-    $paragraph = '';
-    $first = true;
-    for ($j = 0; $j < random_int(1, $maxSentences); $j++){
-        $sentence = fake()->sentence(random_int(1,$maxWords));
-        if ($first){
-            $first = false;
-            $paragraph = $paragraph . $sentence;
-        } else {
-            $paragraph = $paragraph .' '. $sentence;
-        }
-    }
-    return $paragraph;
- }
-
-function generateParagraphs(int $maxWords, int $maxSentences, int $maxParagraphs) {
+function getParagraphs(int $maxWords, int $maxSentences, int $maxParagraphs): array{ 
+    $numParagraphs = random_int(1, $maxSentences);
     $paragraphs = [];
-    for ($i = 0; $i < random_int(1, $maxParagraphs); $i++){
-        array_push($paragraphs, generateParagraph($maxWords, $maxSentences));
+    $paragraph = '';
+    for ($i = 0; $i < $numParagraphs; $i++){
+        $numSentences = random_int(1, $maxSentences);
+        $first = true;
+        for ($j = 0; $j < $numSentences; $j++){
+            $words = random_int(2, $maxWords);
+            $sentence = fake()->sentence($words);
+            if ($first){
+                $first = false;
+                $paragraph = $paragraph . $sentence;
+            } else {
+                $paragraph = $paragraph . ' ' . $sentence;
+            }
+        }
+        array_push($paragraphs, $paragraph);
     }
     return $paragraphs;
 }
-    
-
 
 function getPostBody($paragraphs) {
 $htmlText='';
@@ -83,13 +80,6 @@ for( $i = 0; $i < sizeof($tagarray); $i++) {
 return $tags;
 }
 
-function createExcerpt($paragraphs) {
-    if(random_int(0,1) % 2 == 0) {
-        $excerpt = '<p>' . explode('<p>', $paragraphs[0])[0] . '</p>';
-        return $excerpt;
-    }
-}
-
  // end of required fuinctions
 
 class PostsFactory extends Factory
@@ -100,13 +90,12 @@ class PostsFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array {
-        $paragraphs = generateParagraphs(24,12,12);
+        $paragraphs = getParagraphs(12, 12, 6);
         return [
             'user_id' => random_int(1,10),
             'title' => fake()->sentence(),
             'featuredImage' => getRandomImageURL('public/gallery'),
             'tags' => createTags($paragraphs),
-            'excerpt' => createExcerpt($paragraphs),
             'body' => getPostBody($paragraphs)
         ];
     }
