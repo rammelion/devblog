@@ -85,6 +85,15 @@ p{
 
 }
 
+.tag a {
+    color: var(--main-mi-color);
+}
+
+.tag a:hover {
+    color: var(--main-mih-color);
+}
+
+
 @media screen and (max-width: 767px) {
 
     #left-container{

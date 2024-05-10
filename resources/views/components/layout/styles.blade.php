@@ -86,6 +86,5 @@
 <link rel="stylesheet" href='css/main.css'>
 <link rel="stylesheet" href='css/search.css'>
 <link rel="stylesheet" href='css/main-menu.css'>
-<link rel="stylesheet" href='css/hamburger.css'>
 <link rel="stylesheet" href='css/header-top.css'>
 <link rel="stylesheet" href='vendor\cookies_consent\css\style.css'>
