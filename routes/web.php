@@ -12,10 +12,14 @@ Route::get("/away", function () {
     }
 );*/
 
+// show all post unfiltered
 Route::get('/', [PostsController::class, 'index']);
 
 
-// Route::get('/',[ThemeController::class, 'readCookie']);
+
+//show a single post
+
+Route::get('/{title}', [PostsController::class, 'show']);
 
 
 Route::get('/cookie-policy', function () {
