@@ -46,7 +46,7 @@ class Posts extends Model
         //  search
         if($filters['search'] ?? false) {
             $query->where('title','like', '%' . request(('search')) . '%')     // SELECT * FROM 'posts' WHERE tags LIKE '%tag%';
-                    -> orWhere('description','like', '%' . request(('search')) . '%')
+                    -> orWhere('body','like', '%' . request(('search')) . '%')
                     ->orWhere('tags','like', '%' . request(('search')) . '%');
         }
     }

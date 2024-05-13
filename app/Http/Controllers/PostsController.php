@@ -9,19 +9,20 @@ class PostsController extends Controller
 {
     
     //Show all post unfiltered
-    public function index() {
+    /*public function index() {
         return view('index', [
             'posts' => Posts::all()->sortDesc(),
             'action' => 'index'
         ]);
-    }
+    }*/
     
     //Show all post filtered|unfiltered
-    /*public function index() {
+    public function index() {
         return view('index', [
-            'posts' => Posts::latest()->filter(request(['tag', 'search']))->get()
+            'posts' => Posts::latest()->filter(request(['tag', 'search']))->get(),
+            'action' => 'index'
         ]);
-    }*/
+    }
 
 
 

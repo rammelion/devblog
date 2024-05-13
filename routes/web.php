@@ -12,7 +12,7 @@ Route::get("/away", function () {
     }
 );*/
 
-// show all post unfiltered
+// show all post
 Route::get('/', [PostsController::class, 'index']);
 
 

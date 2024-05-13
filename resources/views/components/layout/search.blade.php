@@ -1,8 +1,9 @@
 <!-- Search -->
-    <form action="/" style="display:contents;">
+    <form action="/?search=search-string" style="display:contents;">
         <div class="search">
             <input
                 type="text"
+                id="search"
                 name="search"
                 placeholder="Search in blog..."
             />
