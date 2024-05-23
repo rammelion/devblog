@@ -3,9 +3,10 @@
 @php
     $tags = explode(',', $tagsCSV);
 @endphp
-Tags:&nbsp;
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
 
 @unless (count($tags) == 0)
+    
     @foreach($tags as $tag)
         <li class="mr-3 list-none tag">
             <a href="/?tag={{$tag}}">{{$tag}}</a>

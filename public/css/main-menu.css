@@ -9,13 +9,6 @@
 }
 
 
-
-
-
-
-
-
-
 #pages-menu h4:hover, #posts-menu h4:hover{
     color: var(--main-ah-color);
 
@@ -29,4 +22,3 @@
     margin-top: 3rem;
     text-align: left;
 }
-

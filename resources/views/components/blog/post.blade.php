@@ -5,21 +5,36 @@
                 if($request['post']->excerpt === null){
                     $request['post']->excerpt = explode('<p>', $request['post']->body)[1];
                 }
+                $userName = $request['post']->user->name;
             @endphp
-            <img src="{{$request['post']->featuredImage}}" />
+            @if($request['post']->featuredImage !== null)
+                <img src="{{$request['post']->featuredImage}}" />
+            @endif
             <h3>
                 <a href="{{$request['post']->title}}">{{$request['post']->title}}</a>
             </h3>
-            <x-blog.tags :tagsCSV="$request['post']->tags"/>
+            <h4><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<a href="/?author={{$userName}}">{{$userName}}</a></h4>
+            @if($request['post']->tags !== null)
+                <h4><x-blog.tags :tagsCSV="$request['post']->tags"/></h4>
+            @endif
+            
 
             <x-blog.excerpt :post="$request['post']"/>
         @break
         @case('show')
-        <img src="{{$request['post']->featuredImage}}" />
+            @if($request['post']->featuredImage !== null)
+                    <img src="{{$request['post']->featuredImage}}" />
+            @endif
             <h3>
                 {{$request['post']->title}}
             </h3>
-            <x-blog.tags :tagsCSV="$request['post']->tags"/>
+            @php
+                $userName = $request['post']->user->name;
+            @endphp
+            <h4><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<a href="/?author={{$userName}}">{{$userName}}</a></h4>
+            @if($request['post']->tags !== null)
+                <x-blog.tags :tagsCSV="$request['post']->tags"/>
+            @endif
 
             <x-blog.body :body="$request['post']->body"/>
         @break

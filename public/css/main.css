@@ -114,3 +114,13 @@ p{
         display: none;
     }
 }
+
+.btn-ok {
+    color: var(--main-ok-button-color);
+    background-color: var(--main-ok-button-bg);
+}
+
+.btn-cancel {
+    color: var(--main-cancel-button-color);
+    background-color: var(--main-cancel-button-bg);
+}

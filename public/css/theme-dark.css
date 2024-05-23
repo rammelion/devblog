@@ -1,5 +1,5 @@
 :root {
-    --main-bg-color: #0c1326;
+    --main-bg-color: 
     --main-color: #a8a8aa;
     --main-hx-color:#DE675D ;
     --main-a-color:#DE675D;
@@ -7,4 +7,8 @@
     --main-btn-color: #DE675D;
     --main-mi-color: #DE5D;
     --main-mih-color: white;
+    --main-ok-button-bg: #0c1326;
+    --main-ok-button-color: white;
+    --main-cancel-button-bg: #0c1326;
+    --main-cancel-button-color: red;
   }

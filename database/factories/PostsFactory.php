@@ -5,12 +5,12 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Posts>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 
- // required function
+  // required function
 
- function generateParagraph(int $maxWords, int $maxSentences){
+  function generateParagraph(int $maxWords, int $maxSentences){
     $paragraph = '';
     $first = true;
     for ($j = 0; $j < random_int(1, $maxSentences); $j++){
@@ -35,43 +35,47 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 
 function getRandomImageURL($directory){
-$files = scandir($directory);
-$url = '';
-while(strlen($url) < 3) {
-    $url = $files[array_rand($files)];
-}
-return 'gallery/' . $url;
+    if(random_int(0,1) % 2 == 0) {
+    $files = scandir($directory);
+    $url = '';
+    while(strlen($url) < 3) {
+        $url = $files[array_rand($files)];
+    }
+    return 'gallery/' . $url;
+    }
 }
 
 
 function createTags($paragraphs)  {
-    $body = [];
-    foreach($paragraphs as $paragraph){
-        $words = explode(' ', $paragraph);
-        foreach($words as $word){
-            array_push($body, $word);
+    if(random_int(0,1) % 2 == 0) {
+        $body = [];
+        foreach($paragraphs as $paragraph){
+            $words = explode(' ', $paragraph);
+            foreach($words as $word){
+                array_push($body, $word);
+            }
         }
-    }
-    $tagarray = [];
-    $tags = '';
-    $tag = strtolower(preg_replace('/[^a-zA-Z0-9\s]/', '', $body[array_rand($body)]));
-    array_push($tagarray, $tag);
-    $count = random_int(1, 6);
-    for ($i = 0; $i < $count; $i++) {
-        while (in_array($tag, $tagarray)) {
-            $tag = strtolower(preg_replace('/[^a-zA-Z0-9\s]/', '', $body[array_rand($body)]));
-        }
+        $tagarray = [];
+        $tags = '';
+        $tag = strtolower(preg_replace('/[^a-zA-Z0-9\s]/', '', $body[array_rand($body)]));
         array_push($tagarray, $tag);
-    }
-
-    for( $i = 0; $i < sizeof($tagarray); $i++) {
-        if ($i < sizeof($tagarray) -1) {
-            $tags .= $tagarray[$i] . ',';
-        } else {
-            $tags .= $tagarray[$i];
+        $count = random_int(1, 6);
+        for ($i = 0; $i < $count; $i++) {
+            while (in_array($tag, $tagarray)) {
+                $tag = strtolower(preg_replace('/[^a-zA-Z0-9\s]/', '', $body[array_rand($body)]));
+            }
+            array_push($tagarray, $tag);
         }
+
+        for( $i = 0; $i < sizeof($tagarray); $i++) {
+            if ($i < sizeof($tagarray) -1) {
+                $tags .= $tagarray[$i] . ',';
+            } else {
+                $tags .= $tagarray[$i];
+            }
+        }
+        return $tags;
     }
-    return $tags;
 }
 
 function createExcerpt($paragraphs) {
@@ -87,8 +91,7 @@ function getPostBody($paragraphs) {
             $htmlText = $htmlText . '<p>' . $paragraph . '</p>';
         }
         return $htmlText;
-    }
-    
+}
 
 
  // end of required fuinctions

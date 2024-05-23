@@ -14,12 +14,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)->create();
-        Posts::factory(10)->create();
-/*
+        // User::factory(10)->create();
+
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]); */
+            'name' => 'Kereszthidi Gábor',
+            'email' => 'kereszthidi.g@rammelion.hu',
+            'email_verified_at' => NULL, 
+            'password' => '$2y$12$yHZpTZqilksbTKa/EDtotuL7nLTOfV3N/sT9EQZSUuThJvetoC4aW',
+            'remember_token' => NULL,
+            'created_at' => '2024-05-19 12:42:56',
+            'updated_at' => '2024-05-19 12:42:56',
+        ]);
+
+        User::factory(9)->create();
+        Posts::factory(10)->create();
     }
 }

@@ -44,4 +44,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // get id from name
+    public static function getIdFromName($name) {
+        $user = User::where('name', $name)->first();
+        return $user->id;
+    }
 }

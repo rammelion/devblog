@@ -8,10 +8,10 @@
 <body>
     <x-layout.header />
     <main>
-        <x-layout.left />
-        <x-layout.right>
+        <x-layout.side/>
+        <x-layout.main>
             {{$slot}}
-        </x-layout.right>
+        </x-layout.main>
     </main>
     <x-layout.footer />
     <x-cookies.container />

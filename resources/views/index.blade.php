@@ -1,4 +1,4 @@
-<x-layout.layout>
+<x-layout.two-column-layout>
     @switch ($action)
         @case('index')
             @unless (count($posts) == 0)
@@ -28,4 +28,4 @@
         @default
         @break
     @endswitch
-</x-layout.layout>
+</x-layout.two-column-layout>

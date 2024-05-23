@@ -4,5 +4,5 @@
     <li><a href="/cookie-policy"><h4>Cookie Policy</h4></a></li>
     <li><a href="/privacy-policy"><h4>Privacy Policy</h4></a></li>
     <li><a href="/credits"><h4>Credits</h4></a></li>
-    <x-layout.theme-buttons />
+    <x-layout.theme-button />
 </ul>

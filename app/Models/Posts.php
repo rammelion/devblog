@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Posts extends Model
 {
@@ -15,6 +17,7 @@ class Posts extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'title',
         'featuredImage',
         'tags',
@@ -27,6 +30,11 @@ class Posts extends Model
      *
      * @var array<int, string>
      */
+
+     public function user(): BelongsTo
+     {
+         return $this->belongsTo(User::class);
+     }
 
      public static function findByTitle($title) {
         $posts = self::all();
@@ -43,6 +51,14 @@ class Posts extends Model
         if($filters['tag'] ?? false) {
             $query->where('tags','like', '%' . request(('tag')) . '%');     // SELECT * FROM 'posts' WHERE tags LIKE '%tag%';
         }
+
+        //author filter
+        if($filters['author'] ?? false) {
+            $author_id = User::getIdFromName($filters['author']);
+            $query->where('user_id','like', $author_id );     // SELECT * FROM 'posts' WHERE user_id LIKE '%user_id%';
+        }
+
+
         //  search
         if($filters['search'] ?? false) {
             $query->where('title','like', '%' . request(('search')) . '%')     // SELECT * FROM 'posts' WHERE tags LIKE '%tag%';
