@@ -9,7 +9,9 @@
                         'action' => $action
                     ];
                 @endphp
-                    <x-blog.post :request="$request" /> 
+                    @if ($post->published === 1)
+                        <x-blog.post :request="$request" /> 
+                    @endif
                 @endforeach
             
             @else

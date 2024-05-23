@@ -11,8 +11,9 @@ class PostsController extends Controller
     
     //Show all post filtered|unfiltered
     public function index() {
+        Posts::updatePublished(); //later get it off and put in job queue
         return view('index', [
-            'posts' => Posts::latest()->filter(request(['tag', 'search', 'author']))->get(),
+            'posts' => Posts::orderBy('published_at', 'desc')->filter(request(['tag', 'search', 'author']))->get(),
             'action' => 'index'
         ]);
     }

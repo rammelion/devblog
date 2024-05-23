@@ -13,7 +13,7 @@
             <h3>
                 <a href="{{$request['post']->title}}">{{$request['post']->title}}</a>
             </h3>
-            <h4><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<a href="/?author={{$userName}}">{{$userName}}</a></h4>
+            <h4><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<a href="/?author={{$userName}}">{{$userName}}</a>&nbsp;<i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;{{$request['post']->published_at}}</h4>
             @if($request['post']->tags !== null)
                 <h4><x-blog.tags :tagsCSV="$request['post']->tags"/></h4>
             @endif
@@ -30,7 +30,7 @@
             </h3>
             @php
                 $userName = $request['post']->user->name;
-            @endphp
+                    @endphp
             <h4><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<a href="/?author={{$userName}}">{{$userName}}</a></h4>
             @if($request['post']->tags !== null)
                 <x-blog.tags :tagsCSV="$request['post']->tags"/>

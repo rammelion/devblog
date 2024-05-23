@@ -93,6 +93,14 @@ function getPostBody($paragraphs) {
         return $htmlText;
 }
 
+function random_boolean() {
+    if (random_int(0,1) % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
  // end of required fuinctions
 
@@ -105,13 +113,24 @@ class PostsFactory extends Factory
      */
     public function definition(): array {
         $paragraphs = generateParagraphs(12,12,8);
+        $published = random_boolean();
+        $publishedAt = null;
+        $lastUpdated = fake()->dateTimeBetween('-1year', 'now');
+        $created = fake()->dateTimeBetween('-1year', $lastUpdated);
+        if ($published) {
+            $publishedAt = fake()->dateTimeBetween($created, 'now');
+        }
         return [
             'user_id' => random_int(1,10),
             'title' => fake()->sentence(),
             'featuredImage' => getRandomImageURL('public/gallery'),
             'tags' => createTags($paragraphs),
             'excerpt' => createExcerpt($paragraphs),
-            'body' => getPostBody($paragraphs)
+            'body' => getPostBody($paragraphs),
+            'created_at' => $created,
+            'updated_at' => $lastUpdated,
+            'published' => $published,
+            'published_at'  => $publishedAt
         ];
     }
 

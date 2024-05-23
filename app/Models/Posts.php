@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use DateTime;
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -37,9 +39,7 @@ class Posts extends Model
      }
 
      public static function findByTitle($title) {
-        $posts = self::all();
-
-        foreach($posts as $post) {
+        foreach(self::all() as $post) {
             if($post['title'] == $title) {
                 return $post;
             }
@@ -67,4 +67,11 @@ class Posts extends Model
         }
     }
 
+    public static function updatePublished() {
+        $notNull = self::whereNotNull('published_at');
+        foreach($notNull->whereDate('created_at', '<=', Carbon::today()->toDateString())->get() as $post) {
+            $post->published = 1;
+            $post->save();
+        }
+    }
 }
